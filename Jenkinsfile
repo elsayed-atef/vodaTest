@@ -20,5 +20,18 @@ stage ("Build") {
        
     }
     }
+        
+        
+        
+        stage ("After Build") {
+    steps {
+    
+    sh "echo 'after build'"
+       
+    }
+    }
+        
+        
+        
 }
 }
