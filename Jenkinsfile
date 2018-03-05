@@ -1,3 +1,4 @@
+node {
 stage ("Checkout") {
     checkout scm
     sh "chmod a+x ./gradlew"
@@ -40,3 +41,4 @@ stage ("Build") {
               ./gradlew assembleRelease ${env.COMMON_BUILD_ARGS}
            """
     }
+}
