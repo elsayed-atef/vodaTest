@@ -1,3 +1,9 @@
+stage ("Checkout") {
+    checkout scm
+    sh "chmod a+x ./gradlew"
+  }
+
+
 stage ("Build") {
     // Check environment (We define ANDROID_HOME in node settings)
     if (env.ANDROID_HOME == null || env.ANDROID_HOME == "") error "ANDROID_HOME not defined"
@@ -34,34 +40,3 @@ stage ("Build") {
               ./gradlew assembleRelease ${env.COMMON_BUILD_ARGS}
            """
     }
-
-    stage('Save artifacts and publish') {
-      // Save build results
-      step([$class: 'ArtifactArchiver', artifacts: "**/*.apk", excludes: "**/*unaligned.apk", fingerprint: true])
-      // Push changes and tag
-      gitLib.pushSSH(commitMsg: "Jenkins build #${env.BUILD_NUMBER} from ${env.BRANCH_NAME}", 
-        tagName: "build/${env.BRANCH_NAME}/${env.BUILD_NUMBER}", files: ".", config: true);
-      sendEmails();
-    }
-
-  stage ('Crashlytics register') {
-    sh """./gradlew crashlyticsUploadDistributionDebug ${env.COMMON_BUILD_ARGS}
-          ./gradlew crashlyticsUploadDistributionRelease ${env.COMMON_BUILD_ARGS}
-       """
-  }
-}
-
-stage ('Release') {
-  try {
-    input 'Do we release this build?'
-    node {
-      echo "Push Release tag"
-      def date  = sh(returnStdout: true, script: 'date -u +%Y%m%d').trim()// = new Date().format('yyyyMMdd') // apparently we can't use Date here, not a problem
-      gitLib.pushSSH(tagName: "release-${date}", commitMsg: "Jenkins promoted");
-      // Do your release stuff
-    }
-  } catch (Exception e) {
-    echo "Release cancelled"
-  }
-}
-
