@@ -1,4 +1,3 @@
-node {
 stage ("Build") {
     // Check environment (We define ANDROID_HOME in node settings)
     if (env.ANDROID_HOME == null || env.ANDROID_HOME == "") error "ANDROID_HOME not defined"
@@ -65,4 +64,4 @@ stage ('Release') {
     echo "Release cancelled"
   }
 }
-}
+
