@@ -16,10 +16,8 @@ stage ("Build") {
      // " -PversionName=${props.versionName} -PversionCode=${props.versionCode}"
 
     // Build the app
-    sh "./gradlew clean"
-        sh """./gradlew assembleDebug          // ${env.COMMON_BUILD_ARGS}
-              ./gradlew assembleRelease       // ${env.COMMON_BUILD_ARGS}
-           """
+    sh "./gradlew --refresh-dependencies clean assemble"
+       
     }
     }
 }
