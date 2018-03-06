@@ -21,7 +21,7 @@ stage ("Build clean") {
  stage ("Build package") {
     steps {
         // Build the app
-    sh "./gradlew assembleDebug"
+    sh "./gradlew assembleRelease"
        
     }
     }
