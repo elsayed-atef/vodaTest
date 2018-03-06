@@ -28,10 +28,12 @@ stage ("Build clean") {
         
         
         
-  stage ("After Build") {
+  stage ("Stage Archive") {
     steps {
     
-    sh "echo 'after build'"
+     
+  //tell Jenkins to archive the apks
+  sh 'archiveArtifacts artifacts: 'app/build/outputs/apk/*.apk', fingerprint: true'
        
     }
     }
