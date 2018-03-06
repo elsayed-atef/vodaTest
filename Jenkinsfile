@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stages {
+stages {
 stage ("Checkout") {
     steps {
     checkout scm
@@ -9,21 +9,26 @@ stage ("Checkout") {
   }
 
 
-stage ("Build") {
+stage ("Build clean") {
     steps {
-    // Common build arguments
-   // env.COMMON_BUILD_ARGS = " -PBUILD_NUMBER=${env.BUILD_NUMBER} -PBRANCH_NAME=${env.BRANCH_NAME}" +
-     // " -PversionName=${props.versionName} -PversionCode=${props.versionCode}"
-
+   
     // Build the app
-    sh "./gradlew --refresh-dependencies clean assemble "
+    sh "./gradlew clean"
+       
+    }
+    }
+        
+ stage ("Build package") {
+    steps {
+        // Build the app
+    sh "./gradlew assembleDebug"
        
     }
     }
         
         
         
-        stage ("After Build") {
+  stage ("After Build") {
     steps {
     
     sh "echo 'after build'"
