@@ -33,7 +33,7 @@ stage ("Build clean") {
     
      
   //tell Jenkins to archive the apks
-  archiveArtifacts artifacts: 'app/build/outputs/apk/release/*.apk', fingerprint: true
+  archiveArtifacts artifacts: 'app/build/outputs/apk/debug/*.apk', fingerprint: true
              
     }
     }
