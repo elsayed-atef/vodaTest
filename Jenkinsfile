@@ -52,7 +52,7 @@ stage ("Build clean") {
           keyAlias: "key0",
           apksToSign: "**/*-unsigned.apk",
           // uncomment the following line to output the signed APK to a separate directory as described above
-           signedApkMapping: [ $class: UnsignedApkBuilderDirMapping ],
+           signedApkMapping: [ $class: app/build/ ],
         )
     
   }
