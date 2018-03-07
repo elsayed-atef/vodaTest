@@ -48,7 +48,7 @@ stage ("Build clean") {
   steps {
     
         signAndroidApks (
-          keyStoreId: "207cbd6a-f7c7-4178-b1ab-ee8b0533675e",
+          keyStoreId: "a364b1be-c6c1-4578-aac5-83ef1ab509a4",
           keyAlias: "key0",
           apksToSign: "**/*-unsigned.apk",
           
