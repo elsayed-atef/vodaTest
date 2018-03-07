@@ -1,17 +1,17 @@
 pipeline {
     agent any
 stages {
-stage ("Checkout") {
-    steps {
-    checkout scm
-    sh "chmod a+x ./gradlew"
-    }
-  }
+// stage ("Checkout") {
+//    steps {
+//    checkout scm
+//    sh "chmod a+x ./gradlew"
+//    }
+//  }
 
 
 stage ("Build clean") {
     steps {
-   
+   sh "chmod a+x ./gradlew"
     // Build the app
     sh "./gradlew clean"
        
