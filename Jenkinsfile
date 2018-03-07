@@ -34,15 +34,15 @@ stage ("Build clean") {
     }
         
         
-  stage ("Stage Archive") {
-    steps {
+ // stage ("Stage Archive") {
+ //  steps {
     
      
   //tell Jenkins to archive the apks
-  archiveArtifacts artifacts: '**/*.apk', fingerprint: true
+  //archiveArtifacts artifacts: '**/*.apk', fingerprint: true
              
-    }
-    }
+  //  }
+  //  }
         
    stage("Sign"){
   steps {
