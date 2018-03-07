@@ -44,7 +44,20 @@ stage ("Build clean") {
     }
     }
         
-        
+   stage("Sign"){
+  steps {
+    
+        signAndroidApks (
+          keyStoreId: "androidtest.jks",
+          keyAlias: "key0",
+          apksToSign: "**/*-unsigned.apk",
+          // uncomment the following line to output the signed APK to a
+          separate directory as described above
+          // signedApkMapping: [ $class: UnsignedApkBuilderDirMapping ],
+        )
+    
+  }
+  }     
         
 }
 }
