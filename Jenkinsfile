@@ -51,9 +51,8 @@ stage ("Build clean") {
           keyStoreId: "ee4398c7-62e0-4d8b-b4ae-e4bed74c1458",
           keyAlias: "key0",
           apksToSign: "**/*-unsigned.apk",
-          // uncomment the following line to output the signed APK to a
-         // separate directory as described above
-          // signedApkMapping: [ $class: UnsignedApkBuilderDirMapping ],
+          // uncomment the following line to output the signed APK to a separate directory as described above
+           signedApkMapping: [ $class: UnsignedApkBuilderDirMapping ],
         )
     
   }
