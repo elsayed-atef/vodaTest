@@ -25,7 +25,13 @@ stage ("Build clean") {
        
     }
     }
-        
+        stage ("Build release package") {
+    steps {
+        // Build the app
+    sh "./gradlew assembleRelease"
+       
+    }
+    }
         
         
   stage ("Stage Archive") {
@@ -33,7 +39,7 @@ stage ("Build clean") {
     
      
   //tell Jenkins to archive the apks
-  archiveArtifacts artifacts: 'app/build/outputs/apk/debug/*.apk', fingerprint: true
+  archiveArtifacts artifacts: '**/*.apk', fingerprint: true
              
     }
     }
