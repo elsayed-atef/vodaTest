@@ -21,7 +21,7 @@ stage ("Build clean") {
  stage ("Build package") {
     steps {
         // Build the app
-    sh "./gradlew assembleDebug"
+    sh "./gradlew -Dhttps.proxyHost=10.102.0.3 -Dhttps.proxyPort=3128 assembleDebug"
        
     }
     }
