@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'jenkins-andriod-slave1'}
+    agent { label 'master'}
 stages {
 // stage ("Checkout") {
 //    steps {
