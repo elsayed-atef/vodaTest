@@ -13,7 +13,7 @@ stage ("Build clean") {
     steps {
         sh "chmod a+x ./gradlew"
     // Build the app
-    //sh "./gradlew clean --info "
+       sh "./gradlew clean --info "
        
     }
     }
@@ -21,7 +21,7 @@ stage ("Build clean") {
  stage ("Build package") {
     steps {
         // Build the app
-    sh "./gradlew clean -Dhttps.proxyHost=10.102.0.3 -Dhttps.proxyPort=3128 assembleDebug"
+    sh "./gradlew  -Dhttps.proxyHost=10.102.0.3 -Dhttps.proxyPort=3128 assembleDebug"
        
     }
     }
