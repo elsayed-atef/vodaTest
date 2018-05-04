@@ -16,6 +16,8 @@ stage ("Build clean") {
        // sh " echo $ANDROID_HOME"
         echo env.BUILD_URL
         echo env.NODE_NAME
+        echo env.JENKINS_HOME
+        echo env.WORKSPACE
         
     // Build the app
         sh "pwd"
