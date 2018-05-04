@@ -4,7 +4,7 @@ pipeline {
                label 'android-slave'
                defaultContainer 'android-slave' 
             
-                  }
+            }}
 stages {
 // stage ("Checkout") {
 //    steps {
