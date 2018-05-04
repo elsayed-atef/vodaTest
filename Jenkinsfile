@@ -18,6 +18,8 @@ stage ("Build clean") {
         echo env.NODE_NAME
         
     // Build the app
+        sh "pwd"
+        sh "ls -l /opt"
        sh "./gradlew clean --info "
        
     }
