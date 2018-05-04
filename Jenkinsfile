@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'master'}
+    agent { label 'android-slave'}
 stages {
 // stage ("Checkout") {
 //    steps {
