@@ -12,7 +12,7 @@ stages {
 stage ("Build clean") {
   
     steps {
-      container('android-slave') {
+      
         sh "chmod a+x ./gradlew"
         echo "++++++"
        // sh " echo $ANDROID_HOME"
@@ -22,6 +22,7 @@ stage ("Build clean") {
         echo env.WORKSPACE
            // Build the app
         sh "pwd"
+         container('android-slave') {
         sh "ls -l /"
          sleep 2700
        sh "./gradlew clean --info "
