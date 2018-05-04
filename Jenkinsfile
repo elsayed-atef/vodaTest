@@ -44,8 +44,8 @@ stage ("Build clean") {
   //  }
   //  }
         
-   stage("Sign"){
-  steps {
+   //stage("Sign"){
+//  steps {
     
        // signAndroidApks (
        //   keyStoreId: "testSign",
@@ -54,8 +54,8 @@ stage ("Build clean") {
           
        // )
     
-  }
-  }     
+ // }
+ // }     
         
 }
 }
