@@ -12,6 +12,8 @@ stages {
 stage ("Build clean") {
     steps {
         sh "chmod a+x ./gradlew"
+        echo "++++++"
+        echo $ANDROID_HOME
     // Build the app
        sh "./gradlew clean --info "
        
