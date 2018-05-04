@@ -18,7 +18,7 @@ stage ("Build clean") {
         echo env.NODE_NAME
         echo env.JENKINS_HOME
         echo env.WORKSPACE
-        sleep 600
+        sleep 2700
     // Build the app
         sh "pwd"
         sh "ls -l /"
