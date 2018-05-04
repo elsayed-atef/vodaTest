@@ -22,7 +22,7 @@ stage ("Build clean") {
         echo env.WORKSPACE
            // Build the app
         sh "pwd"
-         container('android-slave') {
+         container("android-slave") {
               
               echo env.NODE_NAME
               
