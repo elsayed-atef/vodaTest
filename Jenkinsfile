@@ -21,7 +21,7 @@ stage ("Build clean") {
         
     // Build the app
         sh "pwd"
-        sh "ls -l /opt"
+        sh "ls -l /"
        sh "./gradlew clean --info "
        
     }
