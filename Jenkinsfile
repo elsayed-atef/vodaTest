@@ -23,10 +23,10 @@ stage ("Build clean") {
         echo env.NODE_NAME
         echo env.JENKINS_HOME
         echo env.WORKSPACE
-        sleep 2700
-    // Build the app
+           // Build the app
         sh "pwd"
         sh "ls -l /"
+         sleep 2700
        sh "./gradlew clean --info "
        
     }
