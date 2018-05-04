@@ -23,6 +23,9 @@ stage ("Build clean") {
            // Build the app
         sh "pwd"
          container('android-slave') {
+              
+              echo env.NODE_NAME
+              
         sh "ls -l /"
          sleep 2700
        sh "./gradlew clean --info "
