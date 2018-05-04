@@ -1,6 +1,5 @@
 pipeline {
      agent { label 'android-slave'}
-           
 stages {
 // stage ("Checkout") {
 //    steps {
