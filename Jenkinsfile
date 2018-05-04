@@ -47,10 +47,10 @@ stage ("Build clean") {
    stage("Sign"){
   steps {
     
-        signAndroidApks (
-          keyStoreId: "testSign",
-          keyAlias: "key0",
-          apksToSign: "**/*-unsigned.apk",
+       // signAndroidApks (
+       //   keyStoreId: "testSign",
+        //  keyAlias: "key0",
+       //   apksToSign: "**/*-unsigned.apk",
           
         )
     
