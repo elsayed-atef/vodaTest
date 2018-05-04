@@ -1,9 +1,6 @@
 pipeline {
-    agent { 
-            
-               label 'android-slave'
-             //  defaultContainer 'android-slave' 
-            
+    agent { label 'android-slave'
+             //  defaultContainer 'android-slave'
             }
 stages {
 // stage ("Checkout") {
