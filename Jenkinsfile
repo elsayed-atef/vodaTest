@@ -13,7 +13,7 @@ stage ("Build clean") {
     steps {
         sh "chmod a+x ./gradlew"
         echo "++++++"
-        sh " echo $ANDROID_HOME"
+       // sh " echo $ANDROID_HOME"
         echo env.BUILD_URL
         echo env.NODE_NAME
         
