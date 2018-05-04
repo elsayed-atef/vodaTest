@@ -8,7 +8,7 @@ stages {
 //    }
 //  }
 
-
+     node ("android-slave"){
 stage ("Build clean") {
   
     steps {
@@ -32,7 +32,7 @@ stage ("Build clean") {
      }
     }
     }
-        
+     }
  stage ("Build package") {
     steps {
         // Build the app
