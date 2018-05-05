@@ -27,7 +27,7 @@ stage ("Build clean") {
          echo env.NODE_NAME
               
         sh "ls -l /"
-         sleep 2700
+         //sleep 2700
        sh "./gradlew clean --info "
      
     }
