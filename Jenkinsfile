@@ -14,18 +14,6 @@ stage ("Build clean") {
     steps {
       
         sh "chmod a+x ./gradlew"
-        echo "++++++"
-       // sh " echo $ANDROID_HOME"
-        echo env.BUILD_URL
-        echo env.NODE_NAME
-        echo env.JENKINS_HOME
-        echo env.WORKSPACE
-           // Build the app
-        sh "pwd"
-       
-              
-         echo env.NODE_NAME
-              
         sh "ls -l /"
          //sleep 2700
        sh "./gradlew clean --info "
@@ -36,7 +24,7 @@ stage ("Build clean") {
  stage ("Build package") {
     steps {
         // Build the app
-    sh "./gradlew  -Dhttps.proxyHost=10.102.0.3 -Dhttps.proxyPort=3128 assembleDebug"
+    sh "./gradlew assembleDebug"
        
     }
     }
