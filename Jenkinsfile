@@ -14,7 +14,7 @@ stage ("Build clean") {
     steps {
       
         sh "chmod a+x ./gradlew"
-        sh "ls -l /"
+        //sh "ls -l /"
          //sleep 2700
        sh "./gradlew clean --info "
      
