@@ -1,7 +1,7 @@
 # Number of days of inactivity before an issue becomes stale
-hoursUntilStale: 2
+daysUntilStale: 2
 # Number of days of inactivity before a stale issue is closed
-hoursUntilClose: 1
+daysUntilClose: 1
 # Issues with these labels will never be considered stale
 exemptLabels:
   - pinned
